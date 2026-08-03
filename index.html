@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillMart - Location-Based Service Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">SkillMart</div>
+        <nav>
+            <button onclick="openModal()">Register as Skilled Worker</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Find Skilled Professionals Near You</h1>
+        <p>Connect directly with trusted tutors, drivers, and domestic help in your area.</p>
+        
+        <div class="search-container">
+            <input type="text" id="locationInput" placeholder="Enter Location or Pincode...">
+            <select id="categorySelect">
+                <option value="All">All Services</option>
+                <option value="Tutor">Tutor</option>
+                <option value="Driver">Driver</option>
+                <option value="Domestic Help">Domestic Help</option>
+            </select>
+            <button onclick="filterServices()">Search</button>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <h2>Available Service Providers</h2>
+        <div class="services-grid" id="servicesGrid"></div>
+    </main>
+
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Register Your Service</h2>
+            <form id="registrationForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="workerName" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Category</label>
+                    <select id="workerCategory" required>
+                        <option value="Tutor">Tutor</option>
+                        <option value="Driver">Driver</option>
+                        <option value="Domestic Help">Domestic Help</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Location / Area</label>
+                    <input type="text" id="workerLocation" required>
+                </div>
+                <div class="form-group">
+                    <label>Hourly Rate ($)</label>
+                    <input type="number" id="workerRate" required>
+                </div>
+                <button type="submit" class="submit-btn">List My Service</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
